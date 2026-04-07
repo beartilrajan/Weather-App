@@ -1,13 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <input type="text" id="city" placeholder="Enter city name">
-    <button id="search">Search</button>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Weather App</h1>
+        <p>Search any city to view current weather conditions.</p>
+      </header>
+
+      <section aria-label="Search weather by city">
+        <label for="city">City</label>
+        <div>
+          <input
+            id="city"
+            type="text"
+            placeholder="Enter city name"
+            autocomplete="off"
+          />
+          <button id="search" type="button">Search</button>
+        </div>
+      </section>
+
+      <p id="status" role="status" aria-live="polite">
+        Search a city to begin.
+      </p>
+
+      <article id="result" class="empty" aria-live="polite">
+        <section>
+          <h2 id="location">No city selected</h2>
+          <p id="condition">--</p>
+        </section>
+
+        <section>
+          <p id="weather-icon" aria-hidden="true">⛅</p>
+          <p>
+            <strong id="temperature">--</strong>
+            <span>°C</span>
+          </p>
+          <p id="feels-like">Feels like --°C</p>
+          <p id="summary">Results will appear here after you search.</p>
+        </section>
+
+        <section aria-label="Weather details">
+          <p>Humidity: <strong id="humidity">--%</strong></p>
+          <p>Wind: <strong id="wind">-- km/h</strong></p>
+          <p>Feels like: <strong id="apparent">--°C</strong></p>
+        </section>
+      </article>
+    </main>
+
     <script src="main.js"></script>
-</body>
-</html> 
+  </body>
+</html>
