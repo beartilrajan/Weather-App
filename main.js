@@ -26,21 +26,10 @@ function handleSearch() {
     setStatus("Type a city name first.", true);
     return;
   }
-
-  getState();
   getWeather(cityName);
   city.value = "";
 }
 
-function getState() {
-  // Visual feedback for Enter/click.
-  search.style.backgroundColor = "#16a34a";
-
-  // Revert back to the CSS-defined color shortly after.
-  setTimeout(() => {
-    search.style.backgroundColor = "";
-  }, 50);
-}
 
 async function getWeather(cityName) {
   const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cityName)}&count=1&language=en&format=json`;
